@@ -33,7 +33,7 @@ point2f polarcoor_by_origin(const point2f& origin,const float& length,const poin
 }
 
 //搜索除自己与己方守门员之外离球最近的player并返回其id
-int search_player_nearst_ball(const WorldModel* model, int excluded_id)
+int search_player_nearst_ball(const WorldModel* model,const  int& excluded_id)
 {
 	int our_player_nearest_id = -1;
 	const bool* our_exist_id = model->get_our_exist_id();
@@ -60,7 +60,7 @@ int search_player_nearst_ball(const WorldModel* model, int excluded_id)
 
 
 //判断球是否在小车控球嘴上,距离阈值与角度阈值分别默认为16cm与30°
-bool get_ball(const point2f& player_pos, const float& player_dir, const point2f& ball_pos, float len_threshold, float ang_threshold)
+bool get_ball(const point2f& player_pos, const float& player_dir, const point2f& ball_pos,const float& len_threshold,const float& ang_threshold)
 {
 	return length_atob(ball_pos, player_pos) < len_threshold && fabs(anglemod(player_dir - angle_atob(player_pos, ball_pos))) < ang_threshold * AngularUnits;
 }
