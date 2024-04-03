@@ -1,6 +1,6 @@
 # 文档仓库
 
-## 一、分支的列表
+## 一、文档列表
 
 - [Soccer](./Soccer/README.md)
 
